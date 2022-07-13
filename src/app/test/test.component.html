@@ -1,0 +1,88 @@
+<p>Welcome {{name}}</p>
+<p>{{name.length}}</p>
+<p>{{name.toUpperCase()}}</p>
+<p>{{userName()}}</p>
+<p>{{myUrl}}</p>
+<input type="text" value="Angular 10">
+<br><br>
+<input [id]="courseId" type="text" value="Angular 10">
+<br><br>
+<input [disabled]="isDisabled" id="{{courseId}}" type="text" value="Angular11">
+<!--Class binding-->
+<h2 class="TextSize"> Class Binding </h2>
+<h2 [class]="myText"> Class Binding1 </h2>
+<h2 [class.TextSize]="required"> Class Binding Example </h2>  <!--conditional base -->
+<h2 [ngClass] = "Group">Class Binding2</h2>
+<!--Style binding-->
+<h2 [style.color]="'blue'">Style binding</h2>
+<h2 [style.color]="myColor">Style binding1</h2>
+<h2 [style.color]="required ? 'green' : 'red'">Style binding2</h2>
+<h2 [ngStyle]="myStyles">Style binding3</h2>
+<!--Event binding-->
+<br><br>
+<button (click)="onClick()" type="button">Click ME</button>
+<h2> {{greetings}} </h2>
+<!--Template Reference variable-->
+<input #msg type="text">
+<button (click)="message(msg.value)"type = "button"> Welcome </button> 
+ <br><br>
+ <!--Two Way Data Binding-->
+<input [(ngModel)] = data type="text" >
+<button type="button"> ClickMe</button>
+{{data}}
+<br><br>
+<!--Structural directives-->
+<h1 *ngIf = "status;then trueBlock else elseBlock" ></h1>  
+
+<ng-template #elseBlock>
+    <h1> Mr. {{name}} This is Else Part</h1>
+</ng-template>
+
+<ng-template #trueBlock>
+    <h1> Mr. {{name}} This is True Part </h1>
+</ng-template>
+<!--Switch-->
+<div [ngSwitch]="myChoice">
+    <div class="switchCase"> 
+        <div *ngSwitchCase="'one'">This is First Block</div>
+        <div *ngSwitchCase="'two'">This is two Block</div>
+        <div *ngSwitchCase="'three'">This is three Block</div>
+        <div *ngSwitchCase="'four'">This is four Block</div>
+        <div *ngSwitchDefault>Invalid Choice</div>
+    </div>
+</div>
+<!--For-->
+<div *ngFor="let x of subjects; even as f ">  <!--index,first,last,even-->
+    <h2>{{f}} ---> {{x}} </h2>
+</div>
+<!--Component Interaction-->
+<h1> {{parent}}</h1>
+<button (click)="fireEvent()"> Click Me</button>
+<br><br>
+<!--pipes-->
+<h2>{{name}}</h2>
+<h2> {{name | uppercase}}</h2><!-- | is typeoperator-->
+<h2> {{name | lowercase}}</h2>
+<h2> {{myText | titlecase}}</h2>
+<h2> {{name| slice: 4:6}}</h2>
+<h2> {{person | json}}</h2>
+
+<h2> {{4.432 | number: '1.2-3'}} </h2>
+<h2> {{4.432 | number: '2.4-6'}} </h2>
+<h2> {{4.423 | number: '3.1-2'}} </h2>
+
+<h2> {{0.25 | percent}}</h2>
+<h2> {{0.25 | currency}}</h2>
+<h2> {{0.25 | currency: 'INR'}}</h2>
+
+<h2> {{date}}</h2>
+<h2> {{date | date: 'short'}}</h2>
+<h2> {{date | date: 'shortTime'}}</h2>
+<h2> {{date | date: 'medium'}}</h2>
+<h2> {{date | date: 'mediumDate'}}</h2>
+<h2> {{date | date: 'mediumTime'}}</h2>
+<h2> {{date | date: 'long'}}</h2>
+<h2> {{date | date: 'longTime'}}</h2>
+<h2> {{date | date: 'longDate'}}</h2>
+
+<!--Services-->
