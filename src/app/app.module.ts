@@ -18,12 +18,13 @@ import { myRoutings } from './app-routing.module';
     StudentListComponent,
     StudentDetailsComponent,
     myRoutings,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [StudentService],
   bootstrap: [AppComponent]
